@@ -6,7 +6,6 @@ output:
     
 ---
 
-I have completed this project by myself and that I have adhered to St. Clair College Academic Integrity policies in completing this project.
 
 "R version 41 (2021-08-10)"
 
