@@ -144,24 +144,24 @@ ggplotly(ggplot(project,aes(x=IMDB.rating, y= Phase))+ geom_point(color="violet"
 Questions :-
 
  
-[1]   In what ways do you think data visualization is             important to understanding a data set? 
+[1]   In what ways do you think data visualization is important to understanding a data set? 
 
-Ans:  Data visualization helps to tell stories by curating        data into a form easier to understand, highlighting         the trends and outliers. A good visualization tells a       story, removing the noise from data and highlighting        the useful information. Effective data visualization        is a delicate balancing act between form and function.
-
-
-[2]   In what ways do you think data visualization is             important to communicating important aspects of a           dataset?
-
-Ans:  Data visualization helps to quickly and clearly tell        the story that the numbers represent. According to the       Harvard Business Review, infographics, pie charts,          and graphs should serve the purpose of communicating        an idea that drives action. They outline three              specific criteria that all visualizations should            follow.
+Ans:  Data visualization helps to tell stories by curatingdata into a form easier to understand, highlighting the trends and outliers. A good visualization tells a       story, removing the noise from data and highlighting the useful information. Effective data visualization is a delicate balancing act between form and function.
 
 
-[3]   What role does your integrity as an analyst play when       creating a data visualization for communicating             results to others?
+[2]   In what ways do you think data visualization is important to communicating important aspects of a dataset?
+
+Ans:  Data visualization helps to quickly and clearly tell the story that the numbers represent. According to the Harvard Business Review, infographics, pie charts,          and graphs should serve the purpose of communicating an idea that drives action. They outline three specific criteria that all visualizations should             follow.
 
 
-Ans:  Data analysts and other users must be careful to            design their data visualizations with true visual           integrity to ensure that the information being              presented is viewed as credible both literally and          figuratively.
+[3]   What role does your integrity as an analyst play when creating a data visualization for communicating results to others?
 
 
-[4]   How many variables do you think you can successfully        represent in a visualization? What happens when you         exceed this number?
+Ans:  Data analysts and other users must be careful to design their data visualizations with true visual integrity to ensure that the information being              presented is viewed as credible both literally and figuratively.
 
-Ans:  I can use minimum three variable at a time because it       will be too length for the visulisation and sometime we       can't acess the data.
+
+[4]   How many variables do you think you can successfully represent in a visualization? What happens when you exceed this number?
+
+Ans:  I can use minimum three variable at a time because it will be too length for the visulisation and sometime we can't acess the data.
 
 
