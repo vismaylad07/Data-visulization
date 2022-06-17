@@ -1,0 +1,167 @@
+---
+title: "Project_1_0794141"
+output:
+  html_document:
+    toc: true
+    
+---
+
+I have completed this project by myself and that I have adhered to St. Clair College Academic Integrity policies in completing this project.
+
+"R version 41 (2021-08-10)"
+
+Rstudio version - Version 1.4.1717
+
+○	a list of R packages used and their versions :-
+
+[1] Tidyverse - ‘1.3.1’
+
+[2] plotly - ‘4.9.4.1’
+
+[3] gganimate  ‘1.0.7’
+
+[4] Hexbin - ‘1.28.2’
+
+○	Documentation of the data sets: 
+
+  ■	attribution of the owner/creator of the data:-
+  https://www.kaggle.com/rachit239
+  
+  ■	links to the data :- https://www.kaggle.com/rachit239/mcu-complete-dataset
+  
+  ■	summary information about the data :-
+  The dataset was created with the purpose of data             visualization, I have tried my best to add as much           information as possible for the MCU movies that have been    featured till now.
+  
+  This dataset contains information as movie’s name, release date, producer name, duration, cast, budget, collection etc.
+  
+  The data also contains movie till Phase 3 only (till July    2, 2019) and i will update it further as phase 4 gets        going.This dataset contains information as movie’s name,     release date, producer name, duration, cast, budget,         collection etc.
+  
+First, load package "tidyverse" and dataset "mcu.dataset"
+
+```{r}
+library(tidyverse)
+project<-read.csv("C:\\Users\\visma\\OneDrive\\Desktop\\DAB501\\project\\mcu dataset.csv",header=TRUE)
+```
+
+○	two plots displaying the distribution of a single continuous variable
+
+
+[1] HISTOGRAM
+
+
+```{r}
+ggplot(project,aes(x=IMDB.rating))+
+      geom_histogram(binwidth = 0.05)+ labs(title = "Movie rating in Histogram",subtitle = "Rated by IMDB" , caption = "This HISTOGRAM PLOT display tha data of single continuous variable [IMDB.rating]", x = "IMDB rate" ,)
+```
+
+
+[2] DENSITY
+
+
+```{r}
+  ggplot(project,aes(x=IMDB.rating))+
+      geom_density()+ labs(title = "Movie rating in Density",subtitle = "Rated by IMDB", caption = "This DENSITY PLOT display tha data of single continuous variable [IMDB.rating]" , x = "IMDB rate" )
+```
+
+○	two plots displaying information about a single categorical variable
+
+
+[1] HISTOGRAM
+
+
+```{r}
+ggplot(project, aes(x = IMDB.rating, 
+fill = Genre)) +
+geom_histogram(binwidth = 0.13, 
+alpha = 0.5) + labs(title = "Movie rating in Histogram ",subtitle = "Rated by IMDB with Genre" , caption = " This HISTOGRAM PLOT display tha data of single CAtegorical variable [Genre]", x = "IMDB rate" )
+```
+
+
+[2] DENSITY
+
+
+```{r}
+ggplot(project, aes(x =IMDB.rating , 
+fill = Genre)) +
+geom_density(adjust = 0.5, 
+alpha = 0.5) + labs(title = "Movie rating in Density ",subtitle = "Rated by IMDB with Genre", caption = "This DENSITY PLOT display tha data of single CAtegorical variable [Genre]" , x = "IMDB rate" )
+```
+
+○	one plot displaying information about both a continuous variable and a categorical variable 
+
+```{r}
+ggplot(project, aes(x = Phase,y = Genre)) +
+geom_boxplot() + labs(title = "Movie phase  ",subtitle = "Phased with Genre" , caption = " This BOXPLOT display information about both a continuous variable and a categorical variable [Phase] and [Genre]", x = "Phase" , y = "Genre" )
+```
+
+○	two plots should display information that shows a relationship between two variables 
+
+
+[1] Hex plot
+
+
+```{r}
+ggplot(project, aes(x = metascore , y = IMDB.rating)) +
+geom_hex() + labs(title = "Metascore  ",subtitle = "IMDB rating by Metascore", caption = " This HEXPLOT display information about relationship between two variables[Metascore] and [IMDB.rating]" , x = "Metascore" , y = "IMDB rates" )
+```
+
+
+[2] Violin
+
+
+```{r}
+ggplot(project, aes(x = Genre , y = Oscar.Nomination)) +
+geom_violin() + labs(title = "Nomination  ",subtitle = "Nomination by Genre" ,caption = " This VIOLIN PLOT display information about relationship between two variables[Genre] and [Oscar.Nomination]"  , x = "Genre" , y = "Nomination" )
+```
+
+○	one plot should use faceting and display information about 4 variables 
+
+```{r}
+ggplot(project, aes(x = IMDB.rating, fill = Genre)) + 
+geom_histogram(binwidth = 50000) +
+facet_grid(Genre ~ Phase ~ Oscar.Nomination ~ Oscar.won) + labs(title = "Faceting  ",subtitle = "Facet between Phase, producer,oscar nomination and won", caption = " This PLOT display faceting and information about Phase, producer,oscar nomination and won "  , x = "IMDB") 
+```
+
+Now, this faceting for two variable :
+
+
+```{r}
+ggplot(project, aes(x = IMDB.rating, fill = Genre)) + 
+geom_histogram(binwidth = 500) +
+facet_grid(Genre ~ Oscar.Nomination) + labs(title = "Faceting  ",subtitle = "Facet between Phase, producer, oscar nomination and won" ,caption = " This PLOT display faceting and information about 2 variables Genre and oscar nomination " , x = "IMDB" ) 
+```
+
+○	creative plot: an opportunity to explore what’s possible and get creative 
+
+```{r}
+library(plotly)
+library(gganimate)
+```
+```{r}
+ggplotly(ggplot(project,aes(x=IMDB.rating, y= Phase))+ geom_point(color="violet") +  labs(title = "Movie rating in Creative plot ",subtitle = "Rated by IMDB with Genre" , x = "IMDB rate" , y = "Genre")) 
+```
+
+Questions :-
+
+ 
+[1]   In what ways do you think data visualization is             important to understanding a data set? 
+
+Ans:  Data visualization helps to tell stories by curating        data into a form easier to understand, highlighting         the trends and outliers. A good visualization tells a       story, removing the noise from data and highlighting        the useful information. Effective data visualization        is a delicate balancing act between form and function.
+
+
+[2]   In what ways do you think data visualization is             important to communicating important aspects of a           dataset?
+
+Ans:  Data visualization helps to quickly and clearly tell        the story that the numbers represent. According to the       Harvard Business Review, infographics, pie charts,          and graphs should serve the purpose of communicating        an idea that drives action. They outline three              specific criteria that all visualizations should            follow.
+
+
+[3]   What role does your integrity as an analyst play when       creating a data visualization for communicating             results to others?
+
+
+Ans:  Data analysts and other users must be careful to            design their data visualizations with true visual           integrity to ensure that the information being              presented is viewed as credible both literally and          figuratively.
+
+
+[4]   How many variables do you think you can successfully        represent in a visualization? What happens when you         exceed this number?
+
+Ans:  I can use minimum three variable at a time because it       will be too length for the visulisation and sometime we       can't acess the data.
+
+
